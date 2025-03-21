@@ -9,7 +9,7 @@ export default function App() {
   const fetchMovies = async () => {
     try {
       const res = await axios.get(
-        `http://www.omdbapi.com/?s=${searchTerm}&apikey=1ca2ea37`
+        `https://www.omdbapi.com/?s=${searchTerm}&apikey=1ca2ea37`
       );
       setMovies(res.data.Search || []);
     } catch (error) {
