@@ -20,7 +20,7 @@ export default function App() {
   const fetchMovieDetails = async (id) => {
     try {
       const res = await axios.get(
-        `http://www.omdbapi.com/?i=${id}&apikey=1ca2ea37`
+        `https://www.omdbapi.com/?i=${id}&apikey=1ca2ea37`
       );
       setSelectedMovie(res.data);
     } catch (error) {
