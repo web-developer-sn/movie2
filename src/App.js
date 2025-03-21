@@ -27,7 +27,6 @@ export default function App() {
       console.error("Error fetching movie details", error);
     }
   };
-
   return (
     <div style={{ padding: 20 }}>
       <h1>Movie Search App</h1>
