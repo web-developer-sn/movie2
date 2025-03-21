@@ -9,7 +9,7 @@ export default function App() {
   const fetchMovies = async () => {
     try {
       const res = await axios.get(
-        `https://www.omdbapi.com/?t=${searchTerm}&apikey=1ca2ea37`
+        `https://www.omdbapi.com/?s=${searchTerm}&apikey=1ca2ea37`
       );
       setMovies(res.data.Search || []);
     } catch (error) {
@@ -21,7 +21,7 @@ export default function App() {
   const fetchMovieDetails = async (id) => {
     try {
       const res = await axios.get(
-        `https://www.omdbapi.com/?t=${id}&apikey=1ca2ea37`
+        `https://www.omdbapi.com/?i=${id}&apikey=1ca2ea37`
       );
       setSelectedMovie(res.data);
     } catch (error) {
