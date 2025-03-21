@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -7,14 +8,15 @@ export default function App() {
 
   const fetchMovies = async () => {
     try {
-      const res = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=1ca2ea37`);
-      const data = await res.json();
-      setMovies(data.Search || []);
+      const res = await axios.get(
+        `http://www.omdbapi.com/?s=${searchTerm}&apikey=1ca2ea37`
+      );
+      setMovies(res.data.Search || []);
     } catch (error) {
       console.error("Error fetching movies", error);
     }
   };
-  
+
   const fetchMovieDetails = async (id) => {
     try {
       const res = await axios.get(
